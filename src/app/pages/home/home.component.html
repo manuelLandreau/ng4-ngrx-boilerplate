@@ -1,0 +1,8 @@
+<div class="container mt-3" *ngIf="!articles">
+  <img src="../../../assets/spinner.gif" style="position:absolute;left:50%;top:40%;width:70px;" alt="Loading...">
+</div>
+<div class="container mt-3" *ngIf="articles | async as articleList">
+  <div *ngFor="let article of articleList">
+    <app-article-item [article]="article"></app-article-item>
+  </div>
+</div>
